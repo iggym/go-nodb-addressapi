@@ -52,9 +52,9 @@ func DeleteAddressEndpoint(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	router := mux.NewRouter()
-	addresses = append(addresses, Address{ID: "1", Firstname: "David", Lastname: "Harland", EmailAddress: "dave@test.com", PhoneNumber: "214-555-5551" })
-	addresses = append(addresses, Address{ID: "2", Firstname: "Glen", Lastname: "Bell", EmailAddress: "glen@test.com", PhoneNumber: "214-555-5552" })
-	addresses = append(addresses, Address{ID: "3", Firstname: "Daniel", Lastname: "Carney", EmailAddress: "dan@test.com", PhoneNumber: "214-555-5553" })
+	addresses = append(addresses, Address{ID: "1", Firstname: "David", Lastname: "Davey", EmailAddress: "dave@test.com", PhoneNumber: "214-555-5551" })
+	addresses = append(addresses, Address{ID: "2", Firstname: "Glen", Lastname: "Gleny", EmailAddress: "glen@test.com", PhoneNumber: "214-555-5552" })
+	addresses = append(addresses, Address{ID: "3", Firstname: "Daniel", Lastname: "Danny", EmailAddress: "dan@test.com", PhoneNumber: "214-555-5553" })
 	router.HandleFunc("/addresses", GetAddressesEndpoint).Methods("GET")
 	router.HandleFunc("/addresses/{id}", GetAddressEndpoint).Methods("GET")
 	router.HandleFunc("/addresses/{id}", CreateAddressEndpoint).Methods("POST")
