@@ -87,9 +87,12 @@ func main() {
 
 	router.HandleFunc("/upload", upload)
 	router.Handle("/", http.FileServer(http.Dir("static")))
+	
 	router.HandleFunc("/addresses", GetAddressesEndpoint).Methods("GET")
 	router.HandleFunc("/addresses/{id}", GetAddressEndpoint).Methods("GET")
 	router.HandleFunc("/addresses/{id}", CreateAddressEndpoint).Methods("POST")
 	router.HandleFunc("/addresses/{id}", DeleteAddressEndpoint).Methods("DELETE")
+
+
 	log.Fatal(http.ListenAndServe(":8001", router))
 }
