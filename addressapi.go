@@ -85,6 +85,7 @@ func main() {
 	addresses = append(addresses, Address{ID: "2", Firstname: "Glen", Lastname: "Gleny", EmailAddress: "glen@test.com", PhoneNumber: "214-555-5552" })
 	addresses = append(addresses, Address{ID: "3", Firstname: "Daniel", Lastname: "Danny", EmailAddress: "dan@test.com", PhoneNumber: "214-555-5553" })
 
+	//upload and download
 	router.HandleFunc("/upload", upload)
 	router.Handle("/", http.FileServer(http.Dir("static")))
 	
